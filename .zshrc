@@ -107,3 +107,7 @@ alias vim='nvim'
 alias ls='exa --icons --colour=auto -F -G -l'
 alias matrix='unimatrix -s 96 -a -b -f'
 
+dtf () {
+  git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
+}
+
