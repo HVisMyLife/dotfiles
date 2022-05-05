@@ -1,0 +1,5 @@
+# Update packages list
+pacman -Qet | awk '// {print $1}' > .config/packages.toml
+
+# Install all packages
+cat .config/packages.toml | paru -S -
