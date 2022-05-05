@@ -1,0 +1,49 @@
+{
+    "layout": "splith",
+    "width": 100,
+    "nodes": [
+        {
+            "layout": "splitv",
+            "width": 70,
+            "nodes": [
+                {
+                    "layout": "stacking",
+                    "height": 70,
+                    "nodes": [
+                        {
+                            "swallows": { "cmd": "exec kitty" }
+                        },
+                        {
+                            "swallows": { "cmd": "exec kitty" }
+                        },
+                        {
+                            "swallows": { "cmd": "exec kitty" }
+                        }
+                    ]
+                },
+                {
+                    "height": 30,
+                    "layout": "splitv",
+                    "nodes": [
+                        {
+                            "swallows": { "cmd": "exec kitty" }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "layout": "stacking",
+            "width": 30,
+            "nodes": [
+                {
+                    "swallows": { "cmd": "exec kitty" }
+                },
+                {
+                    "swallows": { "cmd": "exec kitty" }
+                }
+            ]
+        }
+    ]
+}
+
