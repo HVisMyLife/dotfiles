@@ -1,0 +1,39 @@
+#!/usr/bin/python
+import click
+import os
+import random
+import sys
+
+import ricksay
+
+DIR = ricksay.__path__[0]
+
+@click.command()
+@click.option('--char', '-c', default='Rick', help='Name of character (Rick, Morty, Beth, Jerry, Summer).')
+@click.option('--file', '-f', required=False, help='Ponyfile to use, file path.')
+def ricksay(char, file):
+    # if -f specified use given file, else get random
+    ponies_dir = os.path.join(DIR, "ponies", char)
+    if file:
+        file = os.path.join(ponies_dir, file)
+    else:
+        file = random.choice(
+            [os.path.join(ponies_dir, f) for f in os.listdir(ponies_dir)])
+
+    # if it's piped text use it, else get random quote
+    if not sys.stdin.isatty():
+        quote = sys.stdin.read()
+    else:
+        quotes_file = os.path.join(DIR, "quotes", char)
+        with open(quotes_file) as f:
+            quote = random.choice(
+                [line.strip() for line in f.read().split('%') if line])
+
+    # run ponysay with faked args
+    sys.argv = ["ricksay", "-f", file, "--", quote]
+    from ricksay.main import main
+
+    main()
+
+if __name__ == '__main__':
+    ricksay()

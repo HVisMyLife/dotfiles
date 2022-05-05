@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+sleep 3
+
+swaymsg workspace 1
+#kitty -e gotop &|
+kitty --hold -e zsh -c 'figlet -f defleppard -w 100 HVLIFE; zsh;' & disown %1
+#sleep 2
+
+#swaymsg workspace 2
+#brave &|
+#sleep 4
+
+#swaymsg workspace 1
+#sleep 1
+
+#swaymsg workspace 5 
+#kitty &|
+#kitty &|
+#sleep 1 
+#swaymsg focus left
+

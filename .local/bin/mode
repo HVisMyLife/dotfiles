@@ -1,0 +1,43 @@
+#!/usr/bin/zsh
+
+if [ $1 -eq 0 ] 
+then
+    MOD=$(cat /home/hvlife/.config/mode)
+else
+    MOD=$1
+    echo $1 > /home/hvlife/.config/mode
+fi
+
+
+# Wallpaper
+#
+killall swaybg &|
+killall cpu &|
+killall crypto &|
+ps ax | awk '/nwg-wrapper/ {print $1}' | xargs kill -9
+ps ax | awk '/mpvpaper/ {print $1}' | xargs kill -9
+
+sleep 1
+
+case $MOD in
+3)
+    mpvpaper DP-1 -o "no-audio loop hwdec=auto video-zoom=0.00" /home/hvlife/.config/wall2.mp4 &|
+    mpvpaper eDP-1 -o "no-audio loop hwdec=auto video-zoom=0.00" /home/hvlife/.config/wall.mp4 &|
+    
+    nwg-wrapper -s main.sh -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o eDP-1 &|
+    nwg-wrapper -s main.sh -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o DP-1 &|
+    crypto &|
+    cpu &|
+    ;;
+2)
+    swaybg -i .config/wallP.* -m fill -o \* &|
+    
+    nwg-wrapper -s main.sh -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o eDP-1 &|
+    nwg-wrapper -s main.sh -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o DP-1 &|
+    crypto &|
+    cpu &|
+    ;;
+1)
+    swaybg -i .config/wallP.* -m fill -o \* &|
+    ;;
+esac

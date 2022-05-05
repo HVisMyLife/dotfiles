@@ -1,0 +1,19 @@
+#!/usr/bin/zsh
+
+
+if nc -zw1 google.com 443; then
+
+BTC=$(curl -s https://api.coinbase.com/v2/prices/BTC-PLN/buy | cut -d\: -f5 | cut -d\" -f2)
+ETH=$(curl -s https://api.coinbase.com/v2/prices/ETH-PLN/buy | cut -d\: -f5 | cut -d\" -f2)
+
+rBTC=$(curl -s 'https://pln.rate.sx/btc@7d?T' | awk '/^avg:/ { print $9 }')
+rETH=$(curl -s 'https://pln.rate.sx/eth@7d?T' | awk '/^avg:/ { print $9 }')
+
+echo "BTC ${BTC}\t${rBTC} \nETH ${ETH}\t${rETH}" > /home/hvlife/.config/crypto
+
+else
+
+echo 'I huj, ni ma neta'
+
+fi
+
