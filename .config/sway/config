@@ -13,7 +13,7 @@ bindsym $mod+q kill
 bindsym $mod+Tab exec $menu
 bindsym $mod+Escape exec ~/.local/bin/powermenu
 bindsym $mod+Shift+c reload
-# bindsym $mod+d exec wl-clipboard-history -p "$(wl-clipboard-history -l 20 | rofi --dmenu --allow-images | cut -d ',' -f1)" | wl-copy
+bindsym $mod+d exec wl-clipboard-history -l 20 | sed 's/^[^,]*,//g' | rofi -dmenu | wl-copy -n
 # bindsym $mod+p exec wf-recorder -g "$(slurp)"  $HOME/Videos/$(date +'vid_%y-%m-%d-%H:%M.mp4')
 
 # Secondary key bindings
@@ -22,8 +22,12 @@ bindsym F8 exec $term
 bindsym F12 exec $fmgr
 bindsym F1 exec ~/.local/bin/powermenu
 bindsym F5 exec $menu
-# bindsym F9 exec wl-clipboard-history -p "$(wl-clipboard-history -l 20 | rofi --dmenu --allow-images | cut -d ',' -f1)" | wl-copy
+bindsym F9 exec wl-clipboard-history -l 20 | sed 's/^[^,]*,//g' | rofi -dmenu | wl-copy -n
 bindsym F10 reload
+bindsym XF86Paste exec wl-paste
+bindsym XF86Copy exec wl-copy
+bindsym $mod+l exec wl-copy
+bindsym $mod+p exec wl-paste
 # bindsym F11 exec wf-recorder -g "$(slurp)"  $HOME/Videos/$(date +'vid_%y-%m-%d-%H:%M.mp4')
 
 # F-keys
@@ -109,7 +113,7 @@ exec easyeffects --gapplication-service
 # exec wl-paste -pw wl-copy
 # exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 # exec clipman restore
-exec wl-clipboard-manager -t
+exec_always wl-clipboard-history -t 
 
 # Automount
 exec udiskie --tray
@@ -243,6 +247,7 @@ exec_always {
 }
 
 exec mode 0
+# exec sworkstyle &> /tmp/sworkstyle.log
 
 include /etc/sway/config.d/*
 
