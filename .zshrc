@@ -104,9 +104,13 @@ alias conf='nvim ~/.config/sway/config'
 alias jr='/home/hvlife/.config/scripts/boot.sh'
 alias smplayer='QT_QPA_PLATFORM=xcb smplayer'
 alias vim='nvim'
-alias ls='exa --icons --colour=auto -F -G -l'
+alias ls='exa --icons --colour=auto -F -G'
+alias ll='exa --icons --colour=auto -F -G -l'
+alias la='exa --icons --colour=auto -F -G -l -a' 
+alias l='exa --icons --colour=auto -F -G -l -a'
 alias matrix='unimatrix -s 96 -a -b -f'
 alias cat='lolcat -f -t'
+
 
 dtf () {
   git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"

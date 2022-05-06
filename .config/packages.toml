@@ -15,6 +15,7 @@ cava
 cbonsai
 clojure
 cmake
+cowsay
 discord
 downgrade
 easyeffects
@@ -25,6 +26,7 @@ fd
 figlet-fonts
 figlet-fonts-extra
 flex
+fortune-mod
 funny-manpages
 genius
 gimp
@@ -41,6 +43,7 @@ lib32-pipewire
 libva-utils
 linux-zen
 linux-zen-headers
+lolcat
 lxappearance-gtk3
 make
 man-db
@@ -91,6 +94,11 @@ ufw
 unimatrix-git
 volantes-cursors
 vscode-html-languageserver
+vulkan-extra-layers
+vulkan-extra-tools
+vulkan-html-docs
+vulkan-tools
+wasm-pack
 wev
 wf-recorder
 wireshark-qt
