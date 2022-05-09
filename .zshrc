@@ -109,7 +109,7 @@ alias ll='exa --icons --colour=auto -F -G -l'
 alias la='exa --icons --colour=auto -F -G -l -a' 
 alias l='exa --icons --colour=auto -F -G -l -a'
 alias matrix='unimatrix -s 96 -a -b -f'
-alias cat='lolcat -f -t'
+# alias cat='lolcat -f -t'
 
 
 dtf () {

@@ -45,8 +45,8 @@ output eDP-1 mode 1920x1080@60.049Hz position 0,1250
 output DP-1 mode 3440x1440@120Hz position 1920,0
 
 # Borders
-gaps inner 12
-gaps outer 12
+gaps inner 16
+gaps outer 8
 default_border pixel 0
 default_floating_border pixel 0
 
@@ -68,11 +68,6 @@ for_window [title="Screensaver"] floating enable
 for_window [title="Network Connections"] floating enable
 for_window [title="Screensaver"] fullscreen enable
 for_window [title="<TEST>"] floating enable
-
-# Opacity
-set $opacity 0.9
-# for_window [class=".*"] opacity $opacity
-
 
 
 # Sleep
@@ -102,17 +97,10 @@ exec_always dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
 # Polkit
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
-# Boot script
-# exec boot
-
 # EQ
 exec easyeffects --gapplication-service
 
-# Clipman
-# exec wl-paste -t text --watch clipman store
-# exec wl-paste -pw wl-copy
-# exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
-# exec clipman restore
+# Clipboard
 exec_always wl-clipboard-history -t 
 
 # Automount
@@ -238,16 +226,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-exec_always {
-	gsettings set org.gnome.desktop.interface gtk-theme 'Juno'  
-	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' 
-	gsettings set org.gnome.desktop.interface cursor-theme 'Volantes cursors'
-	gsettings set org.gnome.desktop.interface cursor-size '40'  
-	gsettings set org.gnome.desktop.interface font-name 'Hack Nerd Font 14' 
-}
+# exec_always {
+# 	gsettings set org.gnome.desktop.interface gtk-theme 'Juno'  
+# 	gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' 
+# 	gsettings set org.gnome.desktop.interface cursor-theme 'Volantes cursors'
+# 	gsettings set org.gnome.desktop.interface cursor-size '40'  
+# 	gsettings set org.gnome.desktop.interface font-name 'Hack Nerd Font 14' 
+#}
 
 exec mode 0
-# exec sworkstyle &> /tmp/sworkstyle.log
+
 
 include /etc/sway/config.d/*
 
