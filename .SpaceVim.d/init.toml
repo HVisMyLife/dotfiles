@@ -39,11 +39,14 @@
   repo = "fmoralesc/molokayo"
   merged = 0
 
+[[layers]]
+  name = "sudo"
+
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
-auto_completion_return_key_behavior = "smart"
-auto_completion_tab_key_behavior = "smart"
+auto_completion_return_key_behavior = "complete"
+auto_completion_tab_key_behavior = "cycle"
 
 [[layers]]
 name = 'checkers'
@@ -54,10 +57,10 @@ name = 'shell'
 default_position = 'bottom'
 default_height = 30
 
-[[layers]]
-name = 'edit'
-autosave_timeout = 60000
-autosave_events = ['InsertLeave', 'TextChanged']
+# [[layers]]
+# name = 'edit'
+# autosave_timeout = 60000
+# autosave_events = []
 
 [[layers]]
 name = "colorscheme"

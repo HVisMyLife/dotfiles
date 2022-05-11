@@ -9,7 +9,7 @@ ETH=$(curl -s https://api.coinbase.com/v2/prices/ETH-PLN/buy | cut -d\: -f5 | cu
 rBTC=$(curl -s 'https://pln.rate.sx/btc@7d?T' | awk '/^avg:/ { print $9 }')
 rETH=$(curl -s 'https://pln.rate.sx/eth@7d?T' | awk '/^avg:/ { print $9 }')
 
-echo "BTC ${BTC}\t${rBTC} \nETH ${ETH}\t${rETH}" > /home/hvlife/.config/crypto
+echo "BTC ${BTC}\t${rBTC} \nETH ${ETH}\t${rETH}" > /home/hvlife/.cache/crypto
 
 else
 

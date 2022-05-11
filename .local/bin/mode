@@ -2,15 +2,20 @@
 
 if [ $1 -eq 0 ] 
 then
-    MOD=$(cat /home/hvlife/.config/mode)
+    MOD=$(cat /home/hvlife/.cache/mode)
 else
     MOD=$1
-    echo $1 > /home/hvlife/.config/mode
+    echo $1 > /home/hvlife/.cache/mode
 fi
 
 #DISPLAYS=$(swaymsg -t get_outputs | awk '/name/ {print $2}' | awk '{gsub(/"/, ""); print}' | awk '{gsub(/,/, ""); print}')
+#
 
-DISPLAYS=$(wlr-randr | awk '/Enabled/ {print a} {a=b;b=$0}' | awk '{print $1}')
+DPBUFF=$(wlr-randr | awk '/Enabled/ {print a} {a=b;b=$0}' | awk '{print $1}')
+echo $DPBUFF
+echo $DPBUFF > /home/hvlife/.cache/dps
+DISPLAYS=$({ grep -x 'eDP-1' /home/hvlife/.cache/dps; grep -xv 'eDP-1' /home/hvlife/.cache/dps; })
+echo $DISPLAYS
 
 # Wallpaper
 #
@@ -36,8 +41,6 @@ case $MOD in
         mpvpaper $DP -o "no-audio loop hwdec=auto video-zoom=0.00" /home/hvlife/.config/$NAME &|
         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
     done
-    
-    crypto &|
     ;;
 3)
     COUNT=0
@@ -57,8 +60,6 @@ case $MOD in
         swaybg -i .config/wallP.* -m fill -o $DP &|
         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
     done
-    
-    crypto &|
     ;;
 1)
 
