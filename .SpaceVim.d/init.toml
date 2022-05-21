@@ -13,6 +13,7 @@
     # layer
     colorscheme = "molokai"
     colorscheme_bg = "dark"
+    guifont = "Hack Nerd Font:h14"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
@@ -34,6 +35,9 @@
     expand_tab = true
     automatic_update = true
     auto_disable_touchpad = false
+    
+    bootstrap_before = 'myspacevim#before'
+    bootstrap_after = 'myspacevim#after'
 
 [[custom_plugins]]
   repo = "fmoralesc/molokayo"
@@ -50,7 +54,7 @@ auto_completion_tab_key_behavior = "cycle"
 
 [[layers]]
 name = 'checkers'
-show_cursor_error = true
+show_cursor_error = false
 
 [[layers]]
 name = 'shell'
@@ -78,7 +82,12 @@ filetypes = [
     "rust",
     "c",
     "cpp",
-    "python"
+    "python",
+#    "html",
+#    "css",
+#    "javascript",
+#    "typescript",
+#    "vim"
 #    "lua"
   ]
   [layers.override_cmd]
@@ -112,6 +121,9 @@ filetypes = [
 
 [[layers]]
   name = "lang#javascript"
+
+[[layers]]
+  name = "lang#typescript"
 
 [[layers]]
   name = "lang#extra"

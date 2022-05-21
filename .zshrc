@@ -96,19 +96,18 @@ rc(){
   fi
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 alias spotify='LD_PRELOAD=/usr/lib/spotify-adblock.so spotify'
-alias lxappearance='GDK_BACKEND=x11 lxappearance'
+# alias lxappearance='GDK_BACKEND=x11 lxappearance'
 alias conf='nvim ~/.config/sway/config'
 alias jr='/home/hvlife/.config/scripts/boot.sh'
-alias smplayer='QT_QPA_PLATFORM=xcb smplayer'
+# alias smplayer='QT_QPA_PLATFORM=xcb smplayer'
 alias vim='nvim'
 alias ls='exa --icons --colour=auto -F -G'
 alias ll='exa --icons --colour=auto -F -G -l'
 alias la='exa --icons --colour=auto -F -G -l -a' 
 alias l='exa --icons --colour=auto -F -G -l -a'
 alias matrix='unimatrix -s 96 -a -b -f'
+alias fps='ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate'
 # alias cat='lolcat -f -t'
 
 

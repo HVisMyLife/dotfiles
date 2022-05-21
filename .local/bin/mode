@@ -36,7 +36,7 @@ case $MOD in
     do
         COUNT=$[$COUNT + 1]
         DOT=".mp4"
-        NAME="wall$COUNT$DOT"
+        NAME="wallV$COUNT$DOT"
 
         mpvpaper $DP -o "no-audio loop hwdec=auto video-zoom=0.00" /home/hvlife/.config/$NAME &|
         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
@@ -48,7 +48,7 @@ case $MOD in
     do
         COUNT=$[$COUNT + 1]
         DOT=".mp4"
-        NAME="wall$COUNT$DOT"
+        NAME="wallV$COUNT$DOT"
 
         mpvpaper $DP -o "no-audio loop hwdec=auto video-zoom=0.00" /home/hvlife/.config/$NAME &|
     done
@@ -57,7 +57,8 @@ case $MOD in
 2)
     for DP in $(echo $DISPLAYS)
     do
-        swaybg -i .config/wallP.* -m fill -o $DP &|
+        NAME="wallP1.*"
+        swaybg -i .config/wallP1.* -m fill -o $DP &|
         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
     done
     ;;
@@ -65,7 +66,8 @@ case $MOD in
 
     for DP in $(echo $DISPLAYS)
     do
-        swaybg -i .config/wallP.* -m fill -o $DP &|
+        NAME="wallP1.*"
+        swaybg -i .config/wallP1.* -m fill -o $DP &|
         echo $DP
     done
     ;;
