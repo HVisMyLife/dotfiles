@@ -13,7 +13,7 @@ bindsym $mod+q kill
 bindsym $mod+Tab exec $menu
 bindsym $mod+Escape exec ~/.local/bin/powermenu
 bindsym $mod+Shift+c reload
-bindsym $mod+d exec wl-clipboard-history -l 20 | sed 's/^[^,]*,//g' | rofi -dmenu | wl-copy -n
+bindsym $mod+d exec wl-clipboard-history -l 30 | sed 's/^[^,]*,//g' | rofi -dmenu | wl-copy -n
 # bindsym $mod+p exec wf-recorder -g "$(slurp)"  $HOME/Videos/$(date +'vid_%y-%m-%d-%H:%M.mp4')
 
 # Secondary key bindings
@@ -22,7 +22,7 @@ bindsym F8 exec $term
 bindsym F12 exec $fmgr
 bindsym F1 exec ~/.local/bin/powermenu
 bindsym F5 exec $menu
-bindsym F9 exec wl-clipboard-history -l 20 | sed 's/^[^,]*,//g' | rofi -dmenu | wl-copy -n
+bindsym F9 exec wl-clipboard-history -l 30 | sed 's/^[^,]*,//g' | rofi -dmenu | wl-copy -n
 bindsym F10 reload
 bindsym XF86Paste exec wl-paste
 bindsym XF86Copy exec wl-copy

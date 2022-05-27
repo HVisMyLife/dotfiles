@@ -55,18 +55,21 @@ case $MOD in
     
     ;;
 2)
+    COUNT=0
     for DP in $(echo $DISPLAYS)
     do
-        NAME="wallP1.*"
+        COUNT=$[$COUNT + 1]
+        NAME="wallP$COUNT.*"
         swaybg -i .config/wallP1.* -m fill -o $DP &|
         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
     done
     ;;
 1)
-
+    COUNT=0
     for DP in $(echo $DISPLAYS)
     do
-        NAME="wallP1.*"
+        COUNT=$[$COUNT + 1]
+        NAME="wallP$COUNT.*"
         swaybg -i .config/wallP1.* -m fill -o $DP &|
         echo $DP
     done
