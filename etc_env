@@ -1,0 +1,13 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+QT_QPA_PLATFORMTHEME="qt5ct"
+QT_QPA_PLATFORM="wayland;xcb"
+SDL_VIDEODRIVER="wayland"
+CLUTTER_BACKEND="wayland"
+XKB_DEFAULT_LAYOUT=pl
+export PATH="/home/hvlife/.local/bin:/home/hvlife/.cargo/bin"
+export EDITOR="nvim"
