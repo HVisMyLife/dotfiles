@@ -71,7 +71,7 @@ case $MOD in
         COUNT=$[$COUNT + 1]
         NAME="wallP$COUNT.*"
         swaybg -i .config/wallP1.* -m fill -o $DP &|
-        echo $DP
+        echo $NAME
     done
     ;;
 esac
