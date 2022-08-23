@@ -11,7 +11,7 @@ fi
 #DISPLAYS=$(swaymsg -t get_outputs | awk '/name/ {print $2}' | awk '{gsub(/"/, ""); print}' | awk '{gsub(/,/, ""); print}')
 #
 
-DPBUFF=$(wlr-randr | awk '/Enabled/ {print a} {a=b;b=$0}' | awk '{print $1}')
+DPBUFF=$(wlr-randr | awk '/Model/ {print a} {a=b;b=$0}' | awk '{print $1}')
 echo $DPBUFF
 echo $DPBUFF > /home/hvlife/.cache/dps
 DISPLAYS=$({ grep -x 'eDP-1' /home/hvlife/.cache/dps; grep -xv 'eDP-1' /home/hvlife/.cache/dps; })
@@ -59,8 +59,8 @@ case $MOD in
     for DP in $(echo $DISPLAYS)
     do
         COUNT=$[$COUNT + 1]
-        NAME="wallP$COUNT.*"
-        swaybg -i .config/wallP1.* -m fill -o $DP &|
+        NAME="wallP$COUNT.png"
+        swaybg -i .config/$NAME -m fill -o $DP &|
         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
     done
     ;;
@@ -69,8 +69,8 @@ case $MOD in
     for DP in $(echo $DISPLAYS)
     do
         COUNT=$[$COUNT + 1]
-        NAME="wallP$COUNT.*"
-        swaybg -i .config/wallP1.* -m fill -o $DP &|
+        NAME="wallP$COUNT.png"
+        swaybg -i .config/$NAME -m fill -o $DP &|
         echo $NAME
     done
     ;;

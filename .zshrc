@@ -108,6 +108,7 @@ alias la='exa --icons --colour=auto -F -G -l -a'
 alias l='exa --icons --colour=auto -F -G -l -a'
 alias matrix='unimatrix -s 96 -a -b -f'
 alias fps='ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate'
+alias discord='discord --use-gl=desktop'
 # alias cat='lolcat -f -t'
 
 
