@@ -1,0 +1,22 @@
+#!/usr/bin/zsh
+
+if [ "$1" = "h" ]; then
+    # Help
+    echo " 1-source, 2-source_framerate_24, 3-upscaling_ratio_3 "
+else
+    # Hello
+    echo Converting
+
+    # make directories
+    mkdir tmp_frames out_frames
+
+    # Divide to frames
+    ffmpeg -i $1 -qscale:v 1 -qmin 1 -qmax 1 -vsync 0 tmp_frames/frame%08d.png 
+
+    # Upscale
+    realesrgan-ncnn-vulkan -i tmp_frames -o out_frames -n realesr-animevideov3 -s $3 -f png
+
+    # Fuse back
+    ffmpeg -r $2 -i out_frames/frame%08d.png -c:v libx264 -r $2 -pix_fmt yuv420p output.mp4
+fi
+
