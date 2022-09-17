@@ -63,7 +63,7 @@ return packer.startup(function(use)
   use("ellisonleao/gruvbox.nvim")
 	use("norcalli/nvim-colorizer.lua")
 	use("goolord/alpha-nvim")
-
+  use("rebelot/kanagawa.nvim")
 	--use({
 	--	"goolord/alpha-nvim",
 	--	branch = "feature/startify-fortune",

@@ -12,15 +12,13 @@ fi
 #
 
 DPBUFF=$(wlr-randr | awk '/Model/ {print a} {a=b;b=$0}' | awk '{print $1}')
-echo $DPBUFF
 echo $DPBUFF > /home/hvlife/.cache/dps
 DISPLAYS=$({ grep -x 'eDP-1' /home/hvlife/.cache/dps; grep -xv 'eDP-1' /home/hvlife/.cache/dps; })
 echo $DISPLAYS
 
 # Wallpaper
 #
-killall swaybg &|
-killall crypto &|
+ps ax | awk '/hyprpaper/ {print $1}' | xargs kill -9
 ps ax | awk '/nwg-wrapper/ {print $1}' | xargs kill -9
 ps ax | awk '/mpvpaper/ {print $1}' | xargs kill -9
 
@@ -59,8 +57,9 @@ case $MOD in
     for DP in $(echo $DISPLAYS)
     do
         COUNT=$[$COUNT + 1]
-        NAME="wallP$COUNT.png"
-        swaybg -i .config/$NAME -m fill -o $DP &|
+        NAME="wallP$COUNT"
+        # swaymsg "output $DP bg /home/hvlife/.config/$NAME.* fill"
+        hyprpaper &|
         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
     done
     ;;
@@ -69,9 +68,9 @@ case $MOD in
     for DP in $(echo $DISPLAYS)
     do
         COUNT=$[$COUNT + 1]
-        NAME="wallP$COUNT.png"
-        swaybg -i .config/$NAME -m fill -o $DP &|
-        echo $NAME
+        NAME="wallP$COUNT"
+        # swaymsg "output $DP bg /home/hvlife/.config/$NAME.* fill"
+        hyprpaper &|
     done
     ;;
 esac
