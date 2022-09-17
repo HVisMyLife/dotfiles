@@ -1,0 +1,125 @@
+{
+   "position": "bottom", 
+   "layer": "top",
+   "height": 30,
+   "modules-center": ["wlr/workspaces", "tray", "custom/notification", "custom/media", "network", "custom/updates", "pulseaudio", "backlight", "custom/date", "clock"],
+	"wlr/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+   "on-click": "activate",
+		"format": "{icon}",
+   "persistent_workspaces": {
+      "1": ["eDP-1"],
+      "2": ["eDP-1"],
+      "3": ["eDP-1"],
+      "4": ["eDP-1"],
+      "5": ["eDP-1"],
+      "6": ["DP-1"],
+      "7": ["DP-1"],
+      "8": ["DP-1"],
+      "9": ["DP-1"],
+      "10": ["DP-1"]
+	},
+   "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "〇",
+      "default": "一",
+      "active": "●"
+      }
+     },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "custom/media": {
+        "format": "{icon} {}",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": " ",
+            "default": " "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/scroll_spotify_status.sh"
+    },
+	"custom/date": {
+    "format": "  {}",
+		"interval": 3600,
+		"exec": "$HOME/.config/waybar/waybar-date.sh",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " <span foreground='red'><sup></sup></span>",
+      "none": " ",
+      "dnd-notification": " <span foreground='red'><sup></sup></span>",
+      "dnd-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+	"clock": {
+		"format": "  {:%H:%M} ",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"network": {
+        	"format-wifi": "  {essid}",
+        	"format-ethernet": " NoOneDetected",
+        	"format-linked": "{ifname} (No IP) ",
+        	"format-disconnected": "󰤮 Disconnected",
+		"tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}"
+	},
+	"custom/updates": {
+        "interval": 120,
+        "return-type": "string",
+        "exec": "~/.config/waybar/modules/updates.sh",
+        "tooltip": false,
+		"on-click":"kitty -e 'paru'; pkill -SIGRTMIN+8 waybar"
+		//"on-click":"setsid -f foot -e paru -Syyu"
+  },
+  "custom/downloads": {
+        "interval": 600,
+        "return-type": "string",
+        "exec": "~/.config/waybar/modules/downloads.py",
+        "tooltip": false,
+		"on-click":"xdg-open https://github.com/xelphlinux/xelph-iso"
+  },
+  "pulseaudio": {
+		"format": "{icon}  {volume}%",
+    "scroll-step": 5, // %, can be a float
+    // "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",  
+    "format-icons": {
+     	"headphone": "",
+     	"hands-free": "",
+     	"headset": "",
+     	"phone": "",
+     	"portable": "",
+     	"car": "",
+     	"default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+  }
+}
