@@ -57,6 +57,7 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("folke/which-key.nvim")
+  use("mg979/vim-visual-multi")
 
 	-- Colorschemes
 	use("f1nwe/neovim-molokai")
@@ -104,7 +105,6 @@ return packer.startup(function(use)
 	-- Git
 	use("lewis6991/gitsigns.nvim")
 	use("f-person/git-blame.nvim")
-	use("lewis6991/gitsigns.nvim")
 	use("kdheepak/lazygit.nvim")
 	use("sindrets/diffview.nvim")
 

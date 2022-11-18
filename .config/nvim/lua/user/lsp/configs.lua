@@ -28,6 +28,8 @@ for _, server in pairs(servers) do
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
 
+  opts.capabilities.offsetEncoding = { "utf-16" };
+
 	if server == "zsh" then
 		server = "bash"
 	end
@@ -86,7 +88,8 @@ for _, server in pairs(servers) do
 	if has_custom_opts then
 		opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 	end
-	lspconfig[server].setup(opts)
+
+  lspconfig[server].setup(opts)
 
 	::continue::
 end

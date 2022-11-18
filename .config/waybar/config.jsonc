@@ -47,13 +47,15 @@
             "default": " "
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/scroll_spotify_status.sh"
+        "exec": "$HOME/.config/waybar/scroll_spotify_status.sh",
+    "on-click": ""
     },
 	"custom/date": {
     "format": "  {}",
 		"interval": 3600,
 		"exec": "$HOME/.config/waybar/waybar-date.sh",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "on-click": ""
 	},
   "custom/notification": {
     "tooltip": false,
@@ -73,14 +75,16 @@
   },
 	"clock": {
 		"format": "  {:%H:%M} ",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "on-click": ""
 	},
 	"network": {
         	"format-wifi": "  {essid}",
         	"format-ethernet": " NoOneDetected",
         	"format-linked": "{ifname} (No IP) ",
         	"format-disconnected": "󰤮 Disconnected",
-		"tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}"
+		"tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
+        "on-click": ""
 	},
 	"custom/updates": {
         "interval": 120,
@@ -120,6 +124,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-click": ""
   }
 }

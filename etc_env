@@ -12,5 +12,5 @@ XKB_DEFAULT_LAYOUT=pl
 export PATH="/home/hvlife/.local/bin:/home/hvlife/.cargo/bin"
 export EDITOR="nvim"
 
-#export _JAVA_AWT_WM_NONREPARENTING=1
-#export XCURSOR_SIZE=24
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XCURSOR_SIZE=24

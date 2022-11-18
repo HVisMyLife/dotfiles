@@ -7,9 +7,11 @@ import sys
 import ricksay
 
 DIR = ricksay.__path__[0]
+names = ['Rick', 'Morty', 'Beth', 'Jerry', 'Summer'];
+index = random.randint(0, 4)
 
 @click.command()
-@click.option('--char', '-c', default='Rick', help='Name of character (Rick, Morty, Beth, Jerry, Summer).')
+@click.option('--char', '-c', default=names[index], help='Name of character (Rick, Morty, Beth, Jerry, Summer).')
 @click.option('--file', '-f', required=False, help='Ponyfile to use, file path.')
 def ricksay(char, file):
     # if -f specified use given file, else get random
@@ -24,7 +26,7 @@ def ricksay(char, file):
     if not sys.stdin.isatty():
         quote = sys.stdin.read()
     else:
-        quotes_file = os.path.join(DIR, "quotes", char)
+        quotes_file = os.path.join(DIR, "quotes", f"{char}.quotes")
         with open(quotes_file) as f:
             quote = random.choice(
                 [line.strip() for line in f.read().split('%') if line])

@@ -1,3 +1,11 @@
+* {
+    font-family: Hack Nerd Font;
+    font-size: 16px;
+    min-height: 0;
+    color: #FFFFFF
+}
+
+
 window {
         background-color: rgba (0, 0, 0, 0.0);
 }

@@ -11,7 +11,7 @@ fi
 #DISPLAYS=$(swaymsg -t get_outputs | awk '/name/ {print $2}' | awk '{gsub(/"/, ""); print}' | awk '{gsub(/,/, ""); print}')
 #
 
-DPBUFF=$(wlr-randr | awk '/Model/ {print a} {a=b;b=$0}' | awk '{print $1}')
+DPBUFF=$(wlr-randr | awk '/Enabled/ {print a} {a=b;b=$0}' | awk '{print $1}')
 echo $DPBUFF > /home/hvlife/.cache/dps
 DISPLAYS=$({ grep -x 'eDP-1' /home/hvlife/.cache/dps; grep -xv 'eDP-1' /home/hvlife/.cache/dps; })
 echo $DISPLAYS
@@ -59,9 +59,9 @@ case $MOD in
         COUNT=$[$COUNT + 1]
         NAME="wallP$COUNT"
         # swaymsg "output $DP bg /home/hvlife/.config/$NAME.* fill"
-        hyprpaper &|
-        nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
+         nwg-wrapper -s /home/hvlife/Documents/Programming/Rust/sys_monitor/target/release/sys_monitor -r 1000 -c style.css -p left -j left -mr 50 -ml 50 -mt 50 -mb 50 -a start -o $DP &|
     done
+    hyprpaper &|
     ;;
 1)
     COUNT=0
@@ -70,7 +70,7 @@ case $MOD in
         COUNT=$[$COUNT + 1]
         NAME="wallP$COUNT"
         # swaymsg "output $DP bg /home/hvlife/.config/$NAME.* fill"
-        hyprpaper &|
     done
+    hyprpaper &|
     ;;
 esac
