@@ -104,7 +104,7 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
-	use("f-person/git-blame.nvim")
+    -- use("f-person/git-blame.nvim")
 	use("kdheepak/lazygit.nvim")
 	use("sindrets/diffview.nvim")
 

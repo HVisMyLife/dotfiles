@@ -143,6 +143,7 @@ alias l='exa --icons --colour=auto -F -G -l -a'
 alias matrix='unimatrix -s 96 -a -b -f'
 alias fps='ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate'
 alias discord='discord --use-gl=desktop'
+alias feedthevoid="echo 'feeding void with zeros biip boop\n'; dd if=/dev/zero of=/dev/null bs=512k count=440k status=progress"
 # alias cat='lolcat -f -t'
 
 
