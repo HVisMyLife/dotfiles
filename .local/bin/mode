@@ -11,7 +11,7 @@ fi
 #DISPLAYS=$(swaymsg -t get_outputs | awk '/name/ {print $2}' | awk '{gsub(/"/, ""); print}' | awk '{gsub(/,/, ""); print}')
 #
 
-DPBUFF=$(wlr-randr | awk '/Enabled/ {print a} {a=b;b=$0}' | awk '{print $1}')
+DPBUFF=$(wlr-randr | awk '/Model/ {print a} {a=b;b=$0}' | awk '{print $1}')
 echo $DPBUFF > /home/hvlife/.cache/dps
 DISPLAYS=$({ grep -x 'eDP-1' /home/hvlife/.cache/dps; grep -xv 'eDP-1' /home/hvlife/.cache/dps; })
 echo $DISPLAYS

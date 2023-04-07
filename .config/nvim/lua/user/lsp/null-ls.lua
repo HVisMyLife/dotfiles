@@ -22,7 +22,7 @@ null_ls.setup({
     formatting.rustfmt,
     formatting.clang_format,
     formatting.cmake_format,
-    diagnostics.flake8,
+    --diagnostics.flake8,
     diagnostics.cppcheck
 	},
 })

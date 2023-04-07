@@ -2,7 +2,7 @@
    "position": "bottom", 
    "layer": "top",
    "height": 30,
-   "modules-center": ["wlr/workspaces", "tray", "custom/notification", "custom/media", "network", "custom/updates", "pulseaudio", "backlight", "custom/date", "clock"],
+   "modules-center": ["wlr/workspaces", "tray", "custom/notification", "custom/media", "network", "battery", "pulseaudio", "backlight", "clock"],
 	"wlr/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
@@ -50,13 +50,6 @@
         "exec": "$HOME/.config/waybar/scroll_spotify_status.sh",
     "on-click": ""
     },
-	"custom/date": {
-    "format": "  {}",
-		"interval": 3600,
-		"exec": "$HOME/.config/waybar/waybar-date.sh",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "on-click": ""
-	},
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
@@ -74,7 +67,7 @@
     "escape": true
   },
 	"clock": {
-		"format": "  {:%H:%M} ",
+		"format": "{:%d.%m  %H:%M} ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click": ""
 	},
@@ -92,7 +85,6 @@
         "exec": "~/.config/waybar/modules/updates.sh",
         "tooltip": false,
 		"on-click":"kitty -e 'paru'; pkill -SIGRTMIN+8 waybar"
-		//"on-click":"setsid -f foot -e paru -Syyu"
   },
   "custom/downloads": {
         "interval": 600,
@@ -100,6 +92,20 @@
         "exec": "~/.config/waybar/modules/downloads.py",
         "tooltip": false,
 		"on-click":"xdg-open https://github.com/xelphlinux/xelph-iso"
+  },
+  "battery": {
+        "format": "{icon}  {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h{M}m",
+        "format-charging": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "interval": 10,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": true,
+        //"on-click": "gnome-power-statistics"
   },
   "pulseaudio": {
 		"format": "{icon}  {volume}%",
@@ -125,6 +131,7 @@
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-click": ""
+        "on-click": "",
+        "tooltip": true,
   }
 }
