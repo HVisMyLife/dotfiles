@@ -35,7 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSEKEY_WHEEL_DECELERATED_MOVEMENTS 8
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 2
+#define DEBOUNCE 5
 
 /* serial.c configuration for split keyboard */
 //#define SOFT_SERIAL_PIN D0
