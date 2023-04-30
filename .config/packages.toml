@@ -55,7 +55,6 @@ intel-compute-runtime
 intel-gpu-tools
 intel-media-driver
 intel-ucode
-ironbar-git
 kitty
 leafpad
 libva-intel-driver
@@ -66,6 +65,7 @@ linux-zen
 linux-zen-headers
 lolcat
 lsp-plugins
+lua-language-server
 mako
 man-db
 man-pages
@@ -113,10 +113,10 @@ reflector
 ripgrep
 rofi-lbonn-wayland-git
 rsync
-rust-analyzer
 rustup
 samba
 samsung-unified-driver
+sccache
 sddm
 sddm-sugar-candy-git
 simple-scan
