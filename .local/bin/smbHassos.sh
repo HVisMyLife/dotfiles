@@ -6,4 +6,4 @@ mount -t cifs //192.168.1.10/media /run/media/hvlife/hassos/First -o username=hv
 mount -t cifs //192.168.1.10/Data /run/media/hvlife/hassos/Second -o username=hvlife,password="/\/\'"
 
 mkdir -p /run/media/hvlife/win
-mount /dev/nvme0n1p3 /run/media/hvlife/win
+mount /dev/nvme0n1p2 /run/media/hvlife/win

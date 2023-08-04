@@ -94,7 +94,7 @@ plugins=(archlinux
 	command-not-found 
 	cp 
 	dirhistory 
-	autojump 
+	#autojump 
 	sudo
 	F-Sy-H
 	zsh-autosuggestions)

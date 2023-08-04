@@ -67,14 +67,14 @@
     "escape": true
   },
 	"clock": {
-		"format": "{:%d.%m  %H:%M} ",
+		"format": "{:%d.%m ⌚ %H:%M} ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click": ""
 	},
 	"network": {
         	"format-wifi": "  {essid}",
         	"format-ethernet": " NoOneDetected",
-        	"format-linked": "{ifname} (No IP) ",
+        	"format-linked": "{ifname} (No IP) 🌐",
         	"format-disconnected": "󰤮 Disconnected",
 		"tooltip-format-wifi": "Signal Strenght: {signalStrength}% | Down Speed: {bandwidthDownBits}, Up Speed: {bandwidthUpBits}",
         "on-click": ""
@@ -112,8 +112,8 @@
     "scroll-step": 5, // %, can be a float
     // "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-bluetooth-muted": "✗ {icon} {format_source}",
+    "format-muted": "✗ {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "",  
     "format-icons": {

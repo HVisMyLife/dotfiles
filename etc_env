@@ -10,7 +10,7 @@ SDL_VIDEODRIVER="wayland"
 CLUTTER_BACKEND="wayland"
 XKB_DEFAULT_LAYOUT=pl
 export PATH="/home/hvlife/.local/bin:/home/hvlife/.cargo/bin"
-export EDITOR="nvim"
+export EDITOR="lvim"
 export RUSTFLAGS="-C target-cpu=native"
 export AF_PATH="/usr"
 export _JAVA_AWT_WM_NONREPARENTING=1
