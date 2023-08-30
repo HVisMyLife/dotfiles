@@ -152,3 +152,5 @@ dtf () {
 }
 
 unsetopt BEEP
+
+eval $(thefuck --alias)
