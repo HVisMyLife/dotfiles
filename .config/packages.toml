@@ -132,9 +132,9 @@ taplo-cli
 teensy_loader_cli
 timidity++
 tree
-ttf-hack-nerd
-ttf-nerd-fonts-symbols-2048-em
-ttf-nerd-fonts-symbols-2048-em-mono
+ttf-firacode-nerd
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-mono
 ttf-nerd-fonts-symbols-common
 udiskie
 ufw

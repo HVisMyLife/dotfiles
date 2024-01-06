@@ -14,4 +14,6 @@ export EDITOR="nvim"
 export RUSTFLAGS="-C target-cpu=native"
 export AF_PATH="/usr"
 export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
 export XCURSOR_SIZE=24
+export BROWSER='brave'

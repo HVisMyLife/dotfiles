@@ -1,40 +1,33 @@
 {
-   "position": "bottom", 
-   "layer": "top",
-   "height": 30,
-   "modules-center": ["wlr/workspaces", "tray", "custom/notification", "custom/media", "network", "battery", "pulseaudio", "backlight", "clock"],
-	"wlr/workspaces": {
+  "position": "bottom", 
+  "layer": "top",
+  "height": 30,
+  "modules-center": ["hyprland/workspaces", "tray", "custom/notification", "custom/media", "network", "battery", "pulseaudio", "backlight", "clock"],
+  
+	"hyprland/workspaces": {
 		"disable-scroll": true,
-		"all-outputs": true,
    "on-click": "activate",
 		"format": "{icon}",
    "persistent_workspaces": {
-      "1": ["eDP-1"],
-      "2": ["eDP-1"],
-      "3": ["eDP-1"],
-      "4": ["eDP-1"],
-      "5": ["eDP-1"],
-      "6": ["DP-1"],
-      "7": ["DP-1"],
-      "8": ["DP-1"],
-      "9": ["DP-1"],
-      "10": ["DP-1"]
-	},
+      "eDP-1": 1,
+      "DP-1": 1
+  },
    "format-icons": {
-      "1": "一",
-      "2": "二",
-      "3": "三",
-      "4": "四",
-      "5": "五",
-      "6": "六",
-      "7": "七",
-      "8": "八",
-      "9": "九",
-      "10": "〇",
-      "default": "一",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "default": "+",
       "active": "●"
       }
-     },
+  },
+
   "tray": {
     "icon-size": 13,
     "spacing": 10
