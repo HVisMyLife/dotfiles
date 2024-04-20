@@ -1,7 +1,7 @@
 * {
 	background-color: #00000050;
 	text-color:       #EFEFEF;
-  font: "Hack Nerd Font 14";
+  font: "FiraCode Nerd Font 14";
  
 	line-margin:     0;
 	line-padding:    0;

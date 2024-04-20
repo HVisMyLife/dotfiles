@@ -6,10 +6,10 @@ rofi_command="rofi -theme themes/powermenu.rasi -i "
 #### Options ###
 power_off="襤 Shutdown"
 reboot="勒 Reboot"
-lock=" Lock Screen"
+lock="🗝 Lock Screen"
 suspend=" Suspend"
 hibernate="鈴 Hibernate"
-log_out="﫼 Log Out"
+log_out=" Log Out"
 
 # Variable passed to rofi
 options="$power_off\n$reboot\n$suspend\n$hibernate\n$log_out\n$lock"

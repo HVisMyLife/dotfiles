@@ -1,6 +1,6 @@
 configuration {
 	modi: "drun";
-	font: "Hack Nerd Font 14";
+	font: "FiraCode Nerd Font 14";
 	display-drun:    "Applications";
 	show-icons: false;
 	terminal: "kitty";
