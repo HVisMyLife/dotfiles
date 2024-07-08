@@ -1,18 +1,1 @@
-configuration {
-	modi: "drun";
-	font: "FiraCode Nerd Font 14";
-	display-drun:    "Applications";
-	show-icons: false;
-	terminal: "kitty";
-	combi-modi: "drun";
-	matching: "fuzzy";
-  timeout {
-      action: "kb-cancel";
-      delay:  0;
-  }
-  filebrowser {
-      directories-first: true;
-      sorting-method:    "name";
-  }
-}
-@theme "~/.config/rofi/themes/jms-theme.rasi"
+@theme "ib"
