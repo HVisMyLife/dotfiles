@@ -154,3 +154,4 @@ dtf () {
 unsetopt BEEP
 
 eval $(thefuck --alias)
+source /usr/share/nvm/init-nvm.sh
