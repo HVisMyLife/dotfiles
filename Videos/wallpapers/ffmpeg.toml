@@ -1,5 +1,0 @@
-ffmpeg -i [source] -c:v libx264 -profile:v baseline -r:v 24 -filter:v "crop=3440:1440" /home/hvlife/.config/wall.mp4
-
-
-ffmpeg -i [source] -r:v 24 -filter:v "crop=3440:1440" /home/hvlife/.config/wall.y4m
-
