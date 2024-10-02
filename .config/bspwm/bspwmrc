@@ -2,10 +2,22 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor eDP-1 -d I II III IV
-bspc monitor eDP-1-1 -d I II III IV
-bspc monitor DP-1 -d V VI VII VIII
-bspc monitor DP-2 -d V VI VII VIII
+inteldp=$(xrandr --query | grep '^DP-1')
+nvidiadp=$(xrandr --query | grep '^DP-2 connected')
+if [[ $inteldp = *\ connected* ]]; then
+        bspc monitor eDP-1 -d VI VII VIII IX X
+        bspc monitor DP-1 -d I II III IV V
+elif [[ $nvidiadp = *\ connected* ]]; then
+        bspc monitor eDP-1-1 -d VI VII VIII IX X
+        bspc monitor DP-2 -d I II III IV V
+else
+        bspc monitor -d I II III IV V VI VII VIII IX X
+fi
+
+# bspc monitor eDP-1 -d I II III IV
+# bspc monitor eDP-1-1 -d I II III IV
+# bspc monitor DP-1 -d V VI VII VIII
+# bspc monitor DP-2 -d V VI VII VIII
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -34,5 +46,6 @@ setxkbmap -layout pl &
 flashfocus
 nm-applet &
 greenclip daemon &
-~/.config/i3/wallpaper.sh &
+wallpaper &
 ~/.config/polybar/polybar.sh &
+xscreensaver &

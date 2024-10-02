@@ -9,11 +9,11 @@ QT_QPA_PLATFORM="wayland;xcb"
 SDL_VIDEODRIVER="wayland"
 CLUTTER_BACKEND="wayland"
 XKB_DEFAULT_LAYOUT=pl
-export PATH="/home/hvlife/.local/bin:/home/hvlife/.cargo/bin"
-export EDITOR="nvim"
-export RUSTFLAGS="-C target-cpu=native"
-export AF_PATH="/usr"
-export _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
-export XCURSOR_SIZE=24
-export BROWSER='brave'
+PATH="/home/hvlife/.local/bin:/home/hvlife/.cargo/bin"
+EDITOR="nvim"
+RUSTFLAGS="-C target-cpu=native"
+AF_PATH="/usr"
+_JAVA_AWT_WM_NONREPARENTING=1
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+XCURSOR_SIZE=24
+BROWSER='brave'

@@ -7,6 +7,7 @@ from argparse import ArgumentParser
 from subprocess import call
 import i3ipc
 
+
 i3 = i3ipc.Connection()
 
 parser = ArgumentParser(prog='disable-standby-fs',

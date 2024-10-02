@@ -16,9 +16,9 @@ super + d
 super+Escape 
   rofi -show power-menu -modi power-menu:rofi-power-menu 
 
-super + R
+super + shift + ctrl + r
 	pkill -USR1 -x sxhkd
-super + R
+super + shift + r
 	bspc wm -r
 
 super + q
@@ -42,7 +42,10 @@ XF86MonBrightnessUp
   brightnessctl -c backlight set +5%
 {XF86AudioPlay,XF86AudioPause,XF86AudioPrev,XF86AudioNext}
 	playerctl {play,pause,previous,next}
+# screenshoots
 
+Print
+  escrotum -s --selection-delay 1500 ~/Pictures/screenshots/%Y-%m-%d-%H%M%S.png
 
 # bspwm specific
 #======================================================================
