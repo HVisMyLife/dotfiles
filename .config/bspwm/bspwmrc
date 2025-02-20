@@ -39,13 +39,14 @@ bspc config focus_follows_pointer true
 bspc config pointer_modifier	super
 
 
-picom  -b --config ~/.config/picom/picom.conf &
+~/.config/picom/picom.sh &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xrdb ~/.config/X11/Xresources & 
 setxkbmap -layout pl &
 flashfocus
 nm-applet &
+udiskie --tray &
 greenclip daemon &
 wallpaper &
 ~/.config/polybar/polybar.sh &
-xscreensaver &
+xscreensaver --no-splash &

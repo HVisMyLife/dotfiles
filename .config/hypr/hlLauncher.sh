@@ -1,5 +1,4 @@
 #!/bin/zsh
-export XDG_CONFIG_HOME="/home/hvlife/.config"
 # NetworkManager
 nm-applet --indicator &|
 dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK &|
@@ -12,17 +11,20 @@ easyeffects --gapplication-service &|
 
 # Clipboard
 wl-clipboard-history -t &|
+# greenclip daemon &
 
 # Automount
 udiskie --tray &|
 
 # Waybar
-waybar &|
+# waybar &|
 
 # Wallpaper
 mode 0 &|
 
-live-server --no-browser /home/hvlife/Documents/Programming/WEB/fluidity 
+shader.sh &|
+
+# live-server --no-browser /home/hvlife/Documents/Programming/WEB/fluidity 
 
 # Sleep
 #swayidle -w \

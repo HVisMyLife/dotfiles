@@ -10,7 +10,8 @@
 		"format": "{icon}",
    "persistent_workspaces": {
       "eDP-1": 1,
-      "DP-1": 1
+      "DP-1": 2,
+      "DP-4": 3
   },
    "format-icons": {
       "1": "1",
@@ -32,17 +33,6 @@
     "icon-size": 13,
     "spacing": 10
   },
-  "custom/media": {
-        "format": "{icon} {}",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": " ",
-            "default": " "
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/scroll_spotify_status.sh",
-    "on-click": ""
-    },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
@@ -60,7 +50,7 @@
     "escape": true
   },
 	"clock": {
-		"format": "{:%d.%m ⌚ %H:%M} ",
+		"format": "{:%d.%m  %H:%M} ",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click": ""
 	},

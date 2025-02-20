@@ -8,10 +8,12 @@ Use 'mode' script to change background behaviour:
  - 3 - video;
  - 4 - video + osd;
 
+At the moment I'm using bspwm, because wayland doesn't quite support nvidia egpu (mainly reverse PRIME).
+
 Backgrounds are saved in .config folder as symlinks to media. 
 Script will handle as many displays as you have with diffrent backgrounds.
 If it fails, propably 'wlr-randr' changed output format, so you need to modify parser.
 For each display you need to create accordingly named symlink (look for example).
 
-There are configs for hyprland, sway and wayfire, choose what you prefer.
+There are configs for hyprland, i3, bspwm, sway and wayfire, choose what you prefer.
 

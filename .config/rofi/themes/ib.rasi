@@ -13,7 +13,7 @@ configuration {
 * {
     font:                        "FiraCode Nerd Font 12";
     background:                  #050e14;
-    background-alt:              #282A2EF0;
+  background-alt:              #282A2EF0;
     foreground:                  #C5C8C6;
     selected:                    #F07489;
     active:                      #6E77FF;
@@ -45,6 +45,7 @@ mainbox {
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "inputbar", "listbox" ];
+    
 }
 
 listbox {
